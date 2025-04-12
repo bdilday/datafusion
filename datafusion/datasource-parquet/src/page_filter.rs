@@ -459,7 +459,7 @@ impl PruningStatistics for PagesPruningStatistics<'_> {
             self.offset_index,
             [&self.row_group_index],
         ) {
-            Ok(min_values) => Some(min_values),
+            Ok(max_values) => Some(max_values),
             Err(e) => {
                 debug!("Error evaluating data page max values {e}");
                 None
